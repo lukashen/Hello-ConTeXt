@@ -2,9 +2,8 @@
 
 \mainlanguage[cn]
 \language[cn]
+\setscript[hanzi]
 \setupbodyfontenvironment[default][em=italic]
-
-%\setuppapersize[A4]
 
 % 书签
 \setupinteraction[state=start]
@@ -13,32 +12,31 @@
 \setupinteraction[state=start, focus=standard, color=black, contrastcolor=black]
 
 \usemodule[simplefonts]
-%\usemodule[zhfonts]
 
-%\setmainfont[cmuserifroman]
-%\setsansfont[cmusansserif]
-%\setmonofont[monaco]
 \setcjkmainfont[twsung]
 \setcjksansfont[wenquanyizenhei]
 \setcjkmonofont[twkai]
+
+%\usemodule[zhfonts]
+
 %\setupzhfonts[serif][regular=adobesongstd]
 %\setupzhfonts[sans][regular=adobeheitistd]
 %\setupzhfonts[mono][regular=adobefangsongstd]
-%\setupzhfonts[latin,serif][regular=cmuserifroman]
-%\setupzhfonts[latin,sans][regular=cmusansserif]
-%\setupzhfonts[latin,mono][regular=monaco]
 %\setupzhfonts[latin,serif][regular=lmroman10regular, bold=lmroman10bold, italic=lmroman10italic, bolditalic=lmroman10bolditalic]
 %\setupzhfonts[latin,sans][regular=lmsans10regular, bold=lmsans10bold, italic=lmsans10oblique, bolditalic=lmsans10boldoblique]
 %\setupzhfonts[latin,mono][regular=lmmono10regular, bold=lmmonolt10bold, italic=lmmono10italic, bolditalic=lmmonolt10boldoblique]
 
+% 脚注 http://www.ntg.nl/pipermail/ntg-context/2012/069675.html
 \startsetups footnote:hanzi
-\setscript[hanzi]
+  \setscript[hanzi]
 \stopsetups
-\setupnote[footnote][setups={footnote:hanzi}]
-%或者写脚注时总是这样写 \footnote{\setscript[hanzi]中文脚注……}
 
-\usemodule[zhfonts][style=none]
-\setupfootnotes[style={\zhfonts[none]}]
+\setupnote[footnote][setups={footnote:hanzi}]
+% 或者写脚注时总是这样写 \footnote{\setscript[hanzi]中文脚注}
+
+% 标点压缩
+%\usemodule[zhfonts][style=none]
+%\setupfootnotes[style={\zhfonts[none]}]
 
 \setuphead[title][align=middle, style=\ssbfb]
 %\setuphead[subject][align=middle, style=\ssbfb]
@@ -52,6 +50,6 @@
 \setupinterlinespace[line=1.5em]
 
 \setuppagenumbering[location=footer, style=\tfx]
-%不显示页码   \setuppagenumering[location=]
+% 不显示页码   \setuppagenumering[location=]
 
 \stopenvironment

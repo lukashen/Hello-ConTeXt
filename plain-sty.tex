@@ -13,7 +13,7 @@
 \setupinteractionscreen[option=bookmark]
 \setupinteraction[state=start, focus=standard, color=black, contrastcolor=black]
 
-\usemodule[simplefonts][size=14pt]
+\usemodule[simplefonts][size=14.4pt]
 
 \setcjkmainfont[twsung]
 \setcjksansfont[wenquanyizenhei]
@@ -49,9 +49,15 @@
 \setupheads[indentnext=yes]
 
 % 行距
-\setupinterlinespace[line=1.5em]
+\setupinterlinespace[line=1.6em]
+
+% 段间距
+\setupwhitespace[small]
 
 \setuppagenumbering[location=footer, style=\tfx]
 % 不显示页码   \setuppagenumering[location=]
+
+% Get a warning if the glyph is missing
+\enabletrackers[fonts.missing]
 
 \stopenvironment
